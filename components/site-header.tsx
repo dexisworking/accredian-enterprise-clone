@@ -18,13 +18,12 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--primary-blue)] text-xl font-bold text-white">
-            A
-          </div>
-          <span className="text-xl font-bold tracking-tight text-[var(--foreground)]">
-            Accredian <span className="text-[var(--primary-blue)]">Enterprise</span>
-          </span>
+        <a href="#top" className="flex items-center">
+          <img 
+            src="https://enterprise.accredian.com/static/media/logo.svg" 
+            alt="Accredian" 
+            className="h-10 w-auto"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
