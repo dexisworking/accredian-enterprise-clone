@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fbff;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --brand-ink: #0b1c33;
+  --brand-blue: #2563eb;
+  --brand-blue-deep: #1d4ed8;
+  --line: rgba(148, 163, 184, 0.24);
+  --line-strong: rgba(100, 116, 139, 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-space-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.marquee-track {
+  animation: marquee 20s linear infinite;
+}
+
+.hero-orbit {
+  animation: pulse-orbit 7s ease-in-out infinite;
+}
+
+.hero-node {
+  animation: float-up 0.9s ease-out both;
+}
+
+.hero-node-delay {
+  animation-delay: 0.15s;
+}
+
+.hero-node-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.hero-node-delay-3 {
+  animation-delay: 0.45s;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-orbit {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
 }
