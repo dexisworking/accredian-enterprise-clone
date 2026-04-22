@@ -17,22 +17,22 @@ export function SiteHeader({ onEnquire }: { onEnquire?: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm border-b border-slate-100">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm border-b border-slate-100 h-20">
+      <div className="mx-auto flex max-w-7xl h-full items-center justify-between px-4 lg:px-8">
         <a href="#top" className="flex items-center">
           <img 
             src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/main/accredian-logo.webp" 
             alt="Accredian" 
-            className="h-10 w-auto"
+            className="h-[35px] w-auto"
           />
         </a>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-[15px] font-bold text-slate-700 transition hover:text-[#1A73E8] relative group"
+              className="text-base font-medium text-[var(--text-gray)] transition hover:text-[#1A73E8] relative group"
             >
               {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#1A73E8] transition-all group-hover:w-full" />

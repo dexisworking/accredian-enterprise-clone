@@ -29,17 +29,24 @@ export default function Home() {
         <CAT />
         <Process />
         
-        <section id="faqs" className="py-24 bg-white">
+        {/* FAQs */}
+        <section id="faqs" className="py-20 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-             <div className="text-left mb-16">
-                <h2 className="text-5xl font-extrabold text-[#0F172A] mb-4">
-                  Frequently Asked <span className="text-[#1A73E8]">Questions</span>
-                </h2>
-                <p className="text-xl text-slate-600">
-                  Everything you need to know about our corporate training programs and delivery modes.
-                </p>
-             </div>
-             <FaqAccordion groups={faqGroups} />
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-extrabold text-[#000000]">
+                Frequently Asked <span className="text-[#1A73E8]">Questions</span>
+              </h2>
+            </div>
+            <FaqAccordion groups={faqGroups} />
+            
+            <div className="mt-16 text-center">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#1A73E8] hover:bg-[#1557b0] text-white w-[170px] h-[48px] rounded-lg text-lg font-bold shadow-lg shadow-[#1A73E8]/20 transition-all"
+              >
+                Enquire Now
+              </button>
+            </div>
           </div>
         </section>
 

@@ -23,26 +23,46 @@ export function AccredianEdge() {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {accredianEdge.map((edge, i) => {
-            const Icon = icons[edge.icon] || Lightbulb;
-            return (
-              <div 
-                key={edge.title} 
-                className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-[#1A73E8]/5 transition-all duration-500 group transform hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-[#1A73E8]/5 flex items-center justify-center mb-6 group-hover:bg-[#1A73E8] transition-colors duration-500">
-                  <Icon size={32} className="text-[#1A73E8] group-hover:text-white transition-colors duration-500" />
+        <div className="relative max-w-7xl mx-auto py-20 px-10">
+          {/* Connecting Dotted Line SVG */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-0 px-20">
+            <svg viewBox="0 0 1000 400" fill="none" className="w-full h-full">
+              <path 
+                d="M50,200 C150,50 250,350 350,200 C450,50 550,350 650,200 C750,50 850,350 950,200" 
+                stroke="#BDC1C6" 
+                strokeWidth="2" 
+                strokeDasharray="6 6"
+              />
+            </svg>
+          </div>
+
+          <div className="relative z-10 flex justify-between items-center h-[400px]">
+            {accredianEdge.map((edge, i) => {
+              const Icon = icons[edge.icon] || Lightbulb;
+              const isEven = i % 2 === 0;
+              const yOffset = isEven ? '-translate-y-24' : 'translate-y-24';
+              
+              return (
+                <div 
+                  key={edge.title} 
+                  className={`flex flex-col items-center group transition-all duration-500 transform ${yOffset} w-[14%]`}
+                >
+                  <div className="w-16 h-16 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center mb-4 group-hover:bg-[#1A73E8] group-hover:scale-110 transition-all duration-300">
+                    <Icon size={30} className="text-[#1A73E8] group-hover:text-white transition-colors" />
+                  </div>
+                  
+                  <div className={`absolute ${isEven ? 'top-20' : 'bottom-20'} w-48 text-center`}>
+                    <h3 className="text-lg font-bold text-[#000000] mb-2 leading-tight">
+                      {edge.title}
+                    </h3>
+                    <p className="text-sm text-[#5F6368] leading-tight font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      {edge.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-extrabold text-[#0F172A] mb-4">
-                  {edge.title}
-                </h3>
-                <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                  {edge.description}
-                </p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
       

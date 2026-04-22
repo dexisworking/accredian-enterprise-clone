@@ -18,9 +18,9 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
   const [openItemIndex, setOpenItemIndex] = useState<number | null>(0);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-12">
-      {/* Sidebar Tabs */}
-      <div className="lg:w-1/3 flex flex-col gap-4">
+    <div className="flex flex-col lg:flex-row gap-16">
+      {/* Sidebar Tabs (30%) */}
+      <div className="lg:w-[30%] flex flex-col gap-5">
         {groups.map((group, idx) => (
           <button
             key={group.title}
@@ -28,10 +28,10 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
               setActiveGroupIndex(idx);
               setOpenItemIndex(0);
             }}
-            className={`px-8 py-5 rounded-2xl text-left text-xl font-bold transition-all ${
+            className={`px-8 py-6 rounded-xl text-left text-[18px] font-extrabold transition-all border-2 ${
               activeGroupIndex === idx
-                ? "bg-white shadow-xl shadow-slate-200/50 text-[#1A73E8] border border-slate-100"
-                : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                ? "bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-[#1A73E8] border-[#1A73E8]"
+                : "bg-slate-50 text-slate-500 border-transparent hover:bg-slate-100"
             }`}
           >
             {group.title}
@@ -39,8 +39,8 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
         ))}
       </div>
 
-      {/* Accordion Content */}
-      <div className="lg:w-2/3 space-y-4">
+      {/* Accordion Content (70%) */}
+      <div className="lg:w-[70%] space-y-5">
         {groups[activeGroupIndex].items.map((item, idx) => (
           <div 
             key={idx} 

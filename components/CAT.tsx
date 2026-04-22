@@ -15,43 +15,41 @@ export function CAT() {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Wave/Loop SVG Background */}
-          <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 hidden lg:block">
-            <svg viewBox="0 0 1000 200" fill="none" className="w-full">
+        <div className="relative max-w-6xl mx-auto h-[500px] flex items-center justify-center">
+          {/* Thick Wave SVG Background */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <svg viewBox="0 0 1000 500" fill="none" className="w-full h-full preserve-3d">
               <path 
-                d="M50,100 C150,0 350,200 500,100 C650,0 850,200 950,100" 
+                d="M100,250 C250,50 450,450 600,250 C750,50 900,250 950,250" 
                 stroke="#1A73E8" 
-                strokeWidth="4" 
-                strokeDasharray="12 12" 
-                className="opacity-20"
+                strokeWidth="24" 
+                strokeLinecap="round"
+                className="opacity-100"
               />
-              <circle cx="50" cy="100" r="6" fill="#1A73E8" />
-              <circle cx="500" cy="100" r="6" fill="#1A73E8" />
-              <circle cx="950" cy="100" r="6" fill="#1A73E8" />
             </svg>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-16 relative">
+          <div className="flex flex-col lg:flex-row items-center justify-between w-full relative z-10 gap-0">
             {catFramework.map((item, i) => {
               const Icon = icons[i] || BookOpen;
+              const offset = i === 1 ? 'lg:translate-y-20' : i === 2 ? 'lg:-translate-x-16' : '';
+              const negativeMargin = i > 0 ? 'lg:-ml-24' : '';
+              
               return (
-                <div key={item.title} className="flex flex-col items-center text-center group">
-                  <div className="relative mb-8">
-                    {/* Outer circle with gradient border effect */}
-                    <div className="w-48 h-48 rounded-full border-4 border-[#1A73E8] flex items-center justify-center bg-white shadow-xl group-hover:scale-105 transition-transform duration-500 relative z-20">
-                      <div className="p-8">
-                         <Icon size={64} className="text-[#1A73E8]" />
+                <div key={item.title} className={`flex flex-col items-center text-center group ${offset} ${negativeMargin}`}>
+                  <div className="relative mb-6">
+                    {/* Large Overlapping Circles */}
+                    <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] rounded-full border-[12px] border-white flex items-center justify-center bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:scale-105 transition-transform duration-500 relative z-20">
+                      <div className="flex flex-col items-center">
+                         <Icon size={80} className="text-[#1A73E8] mb-4" />
+                         <h3 className="text-3xl font-extrabold text-[#000000]">
+                           {item.title}
+                         </h3>
                       </div>
                     </div>
-                    {/* Glowing background */}
-                    <div className="absolute inset-0 bg-[#1A73E8]/10 rounded-full blur-2xl scale-90 group-hover:scale-110 transition-transform duration-500 -z-10" />
                   </div>
                   
-                  <h3 className="text-3xl font-extrabold text-[#0F172A] mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-lg text-slate-600 leading-relaxed max-w-[240px]">
+                  <p className="text-lg text-[#3C4043] leading-relaxed max-w-[240px] font-medium">
                     {item.description}
                   </p>
                 </div>
