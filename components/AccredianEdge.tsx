@@ -1,60 +1,73 @@
 "use client";
 
+import { Target, Users, Zap, Monitor, Layers, BarChart3, Clock } from "lucide-react";
+
 const edges = [
   {
-    title: "Global Perspective",
-    description: "Curriculum designed with global industry standards and case studies.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    title: "Tailored Solutions",
+    description: "Programs customized to your organization's goals and challenges.",
+    icon: Target,
   },
   {
-    title: "Comprehensive Support",
-    description: "Dedicated learning managers and 24/7 technical assistance for teams.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
+    title: "Expert Guidance",
+    description: "Learn from industry leaders with real-world success.",
+    icon: Users,
   },
   {
-    title: "Flexibility",
-    description: "Modular programs that fit into busy corporate schedules seamlessly.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    title: "Innovative Framework",
+    description: "Proprietary methods for impactful, application-driven results.",
+    icon: Zap,
   },
   {
-    title: "In-depth Focus",
-    description: "Specialized training paths focusing on deep technical and strategic skills.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
+    title: "Advanced Technology",
+    description: "State-of-the-art LMS for seamless learning experiences.",
+    icon: Monitor,
+  },
+  {
+    title: "Diverse Offerings",
+    description: "Courses across industries, skill levels, and emerging fields.",
+    icon: Layers,
+  },
+  {
+    title: "Proven Impact",
+    description: "Trusted by leading organizations for measurable ROI.",
+    icon: BarChart3,
+  },
+  {
+    title: "Flexible Delivery",
+    description: "Online and offline options tailored to your needs.",
+    icon: Clock,
   },
 ];
 
 export function AccredianEdge() {
   return (
-    <section id="edge" className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-[var(--primary-blue)]">The Accredian Edge</h2>
-          <p className="mt-2 text-4xl font-extrabold text-[var(--foreground)]">Why Choose Us for Your Enterprise Training?</p>
+    <section id="accredian-edge" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-[var(--primary-blue)]/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--bg-light)] text-[var(--primary-blue)] text-sm font-bold uppercase tracking-widest mb-6 border border-[var(--line)]">
+            The Accredian Edge
+          </div>
+          <h2 className="text-4xl font-extrabold text-[var(--foreground)] sm:text-5xl leading-tight">
+            Why Choose Us for Your Enterprise Training?
+          </h2>
         </div>
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {edges.map((edge) => (
-            <div key={edge.title} className="p-8 rounded-3xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-              <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[var(--bg-light)] text-[var(--primary-blue)] mb-6">
-                {edge.icon}
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {edges.map((edge, index) => (
+            <div 
+              key={edge.title} 
+              className={`group p-8 rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2 ${
+                index === 6 ? "sm:col-span-2 lg:col-span-3 xl:col-span-1" : ""
+              }`}
+            >
+              <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[var(--bg-light)] text-[var(--primary-blue)] mb-8 transition-colors duration-500 group-hover:bg-[var(--primary-blue)] group-hover:text-white">
+                <edge.icon size={28} strokeWidth={2.5} />
               </div>
               <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">{edge.title}</h3>
-              <p className="text-[var(--text-gray)] leading-relaxed">{edge.description}</p>
+              <p className="text-[var(--text-gray)] leading-relaxed text-sm">{edge.description}</p>
             </div>
           ))}
         </div>

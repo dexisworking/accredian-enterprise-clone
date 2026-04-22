@@ -16,7 +16,7 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100/50">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         <a href="#top" className="flex items-center">
           <img 

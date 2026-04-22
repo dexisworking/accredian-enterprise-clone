@@ -1,67 +1,53 @@
 "use client";
 
-import Image from "next/image";
+import { LeadForm } from "./lead-form";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-white pt-24 lg:pt-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
-            <h1 className="text-4xl font-extrabold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl">
+    <section id="hero" className="relative overflow-hidden bg-[var(--bg-light)] pt-16 pb-24 lg:pt-32 lg:pb-40">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(26,115,232,0.08)_0%,transparent_70%)] pointer-events-none" />
+      
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+          <div className="lg:col-span-6">
+            <div className="inline-flex items-center rounded-full bg-[var(--line)] px-3 py-1 text-sm font-semibold text-[var(--primary-blue)] mb-8">
+              Accredian Enterprise
+            </div>
+            <h1 className="text-4xl font-extrabold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl leading-[1.1]">
               <span className="block">Empower Your Team with</span>
-              <span className="block text-[var(--primary-blue)]">Strategic Skill Enhancement</span>
+              <span className="block text-[var(--primary-blue)] mt-2">Strategic Skill Enhancement</span>
             </h1>
-            <p className="mt-6 text-lg text-[var(--text-gray)] sm:text-xl">
-              Accredian Enterprise partners with organizations to deliver customized training programs in Data Science, AI, and Product Management.
+            <p className="mt-8 text-lg text-[var(--text-gray)] sm:text-xl leading-relaxed max-w-xl">
+              Partner with Accredian to deliver customized training programs in Data Science, AI, and Product Management that drive measurable business impact.
             </p>
-            <div className="mt-8 space-y-4">
+            
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
               {[
-                "Customized Curriculum",
-                "Expert-led Training",
-                "Hands-on Projects",
-                "Measurable ROI",
-              ].map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--primary-blue)] text-white">
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
+                { title: "Customized", desc: "Curriculum tailored to your needs" },
+                { title: "Expert-led", desc: "Training by industry veterans" },
+                { title: "Project-based", desc: "Real-world hands-on experience" },
+                { title: "ROI Driven", desc: "Measurable performance growth" },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm border border-[var(--line)]">
+                    <svg className="h-6 w-6 text-[var(--primary-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-lg font-medium text-[var(--foreground)]">{feature}</span>
+                  <div>
+                    <h3 className="font-bold text-[var(--foreground)]">{item.title}</h3>
+                    <p className="text-sm text-[var(--text-gray)]">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
-            <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[var(--primary-blue)] px-8 py-4 text-lg font-bold text-white transition hover:bg-[var(--primary-blue-hover)] shadow-lg"
-              >
-                Enquire Now
-              </a>
-            </div>
           </div>
-          <div className="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:items-center">
-            <div className="relative mx-auto w-full rounded-2xl shadow-2xl overflow-hidden border-8 border-white">
-              <Image
-                src="/hero_professionals.png"
-                alt="Professional team"
-                width={800}
-                height={600}
-                className="w-full object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary-blue)]/20 to-transparent pointer-events-none" />
+          
+          <div className="mt-16 lg:col-span-6 lg:mt-0">
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[var(--brand-blue)]/10 to-transparent blur-2xl pointer-events-none" />
+              <LeadForm />
             </div>
           </div>
         </div>
