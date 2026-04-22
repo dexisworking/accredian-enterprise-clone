@@ -2,17 +2,44 @@
 
 import { useState } from "react";
 
-type FaqItem = {
-  question: string;
-  answer: string;
+type FaqGroup = {
+  title: string;
+  items: {
+    question: string;
+    answer: string;
+  }[];
 };
 
-export function FaqAccordion({ items }: { items: FaqItem[] }) {
-  const [openItem, setOpenItem] = useState(items[0]?.question ?? "");
+export function FaqAccordion({ groups }: { groups: FaqGroup[] }) {
+  const [activeGroup, setActiveGroup] = useState(groups[0]?.title ?? "");
+  const currentGroup =
+    groups.find((group) => group.title === activeGroup) ?? groups[0];
+  const [openItem, setOpenItem] = useState(currentGroup?.items[0]?.question ?? "");
 
   return (
-    <div className="space-y-4">
-      {items.map((item) => {
+    <div>
+      <div className="mb-6 flex flex-wrap gap-3">
+        {groups.map((group) => (
+          <button
+            key={group.title}
+            type="button"
+            onClick={() => {
+              setActiveGroup(group.title);
+              setOpenItem(group.items[0]?.question ?? "");
+            }}
+            className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
+              activeGroup === group.title
+                ? "border-[var(--brand-blue)] bg-[var(--brand-blue)] text-white"
+                : "border-[var(--line)] bg-white text-slate-600"
+            }`}
+          >
+            {group.title}
+          </button>
+        ))}
+      </div>
+
+      <div className="space-y-4">
+        {currentGroup.items.map((item) => {
         const isOpen = item.question === openItem;
 
         return (
@@ -50,7 +77,8 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
             </div>
           </article>
         );
-      })}
+        })}
+      </div>
     </div>
   );
 }

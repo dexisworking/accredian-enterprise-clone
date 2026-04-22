@@ -3,11 +3,13 @@
 import { useState } from "react";
 
 const navItems = [
-  { label: "Why us", href: "#why" },
-  { label: "Programs", href: "#programs" },
-  { label: "Process", href: "#process" },
-  { label: "Results", href: "#results" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Stats", href: "#stats" },
+  { label: "Clients", href: "#clients" },
+  { label: "Edge", href: "#accredian-edge" },
+  { label: "CAT", href: "#cat" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "FAQs", href: "#faqs" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 export function SiteHeader() {

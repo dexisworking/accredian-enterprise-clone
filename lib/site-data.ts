@@ -1,99 +1,87 @@
-export const partnerLogos = [
-  "Samsung",
-  "Infosys",
-  "Razorpay",
-  "PhonePe",
-  "Freshworks",
-  "HCLTech",
-  "Capgemini",
-  "Cognizant",
-];
-
-export const proofPoints = [
+export const clientLogos = [
   {
-    kicker: "Consultative",
-    title: "Programs mapped to business goals",
-    description:
-      "We frame each learning engagement around role maturity, target outcomes, and the pace of change the organization is navigating.",
+    name: "Reliance",
+    logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/rel.png",
   },
   {
-    kicker: "Cohort-led",
-    title: "Delivery that balances rigor and momentum",
-    description:
-      "Live sessions, curated projects, office hours, and leadership visibility keep the experience practical without feeling fragmented.",
+    name: "HCL",
+    logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/hcl.png",
   },
   {
-    kicker: "Measurable",
-    title: "Stakeholder-friendly reporting",
-    description:
-      "Participation, completion, learner signals, and follow-up recommendations are packaged in a format enterprise teams can act on quickly.",
+    name: "IBM",
+    logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/ibm.png",
+  },
+  {
+    name: "CRIF",
+    logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/crif.png",
+  },
+  {
+    name: "ADP",
+    logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/adp.svg",
+  },
+  {
+    name: "Bayer",
+    logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/bayer.svg",
   },
 ];
 
-export const programTracks = [
+export const stats = [
   {
-    kicker: "Track 01",
-    title: "Leadership capability academies",
-    description:
-      "For senior and emerging leaders building stronger strategic judgment, change leadership, and cross-functional execution.",
-    highlights: [
-      "Custom leadership pathways by level",
-      "Facilitated peer cohorts and case discussions",
-      "Executive sponsor checkpoints",
-    ],
+    label: "Professionals trained for exceptional career success",
+    value: "10K+",
   },
   {
-    kicker: "Track 02",
-    title: "AI, data, and digital transformation",
-    description:
-      "For teams navigating new tooling, automation, AI literacy, and function-specific digital upskilling across the business.",
-    highlights: [
-      "Role-aware AI adoption journeys",
-      "Data storytelling and decision-making modules",
-      "Real use-case based assignments",
-    ],
+    label: "Sessions delivered with unmatched learning excellence",
+    value: "200+",
   },
   {
-    kicker: "Track 03",
-    title: "High-impact role cohorts",
-    description:
-      "For sales, product, operations, and customer-facing functions that need sharper performance in a compressed timeline.",
-    highlights: [
-      "Function-specific curriculum design",
-      "Applied assessments and practical coaching",
-      "Flexible virtual and blended delivery",
-    ],
+    label: "Active learners engaged in dynamic courses",
+    value: "5K+",
   },
 ];
 
-export const workflowSteps = [
+export const accredianEdge = [
   {
-    title: "Align on business goals",
+    title: "Product & Innovation Hub",
     description:
-      "We start with the capability gap, the audience, and the outcomes that matter to sponsors and managers.",
+      "Driving creativity, product excellence, and innovation strategies.",
   },
   {
-    title: "Design the learning architecture",
+    title: "Gen-AI Mastery",
     description:
-      "Curriculum, format, faculty mix, and delivery schedule are shaped around enterprise constraints and adoption goals.",
+      "Comprehensive training on harnessing Generative AI for business transformation.",
   },
   {
-    title: "Deliver with high-touch support",
+    title: "Leadership Elevation",
     description:
-      "Cohort management, reminders, facilitation, and checkpoints keep participation consistent without heavy internal overhead.",
+      "Programs designed to build strong, visionary, and impactful leaders.",
   },
   {
-    title: "Close the loop with reporting",
+    title: "Tech & Data Insights",
     description:
-      "Post-program insights, learner feedback, and next-step recommendations help teams make informed follow-on decisions.",
+      "Training in cutting-edge technologies, data analytics, and digital tools.",
+  },
+  {
+    title: "Operations Excellence",
+    description:
+      "Enhancing efficiency, process optimization, and operational leadership.",
+  },
+  {
+    title: "Digital Enterprise",
+    description:
+      "Empowering professionals in a fast-paced digital business environment.",
+  },
+  {
+    title: "Fintech Innovation Lab",
+    description:
+      "Specializing in emerging trends and technologies in the financial sector.",
   },
 ];
 
 export const capabilityGroups = [
   {
     title: "Program Specific",
-    description:
-      "Programs can be tailored by credential depth and structure, ranging from certificates to executive and post graduate certificate formats.",
+    description: "Certificate, Executive, Post Graduate Certificate",
     items: ["Certificate", "Executive", "Post Graduate Certificate"],
     image:
       "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/project-management-v2.webp",
@@ -101,7 +89,7 @@ export const capabilityGroups = [
   {
     title: "Industry Specific",
     description:
-      "Learning paths can be contextualized to industry realities across technology, healthcare, retail, finance, education, and manufacturing.",
+      "IT, Healthcare, Retail, Finance, Education, Manufacturing",
     items: [
       "IT",
       "Healthcare",
@@ -116,7 +104,7 @@ export const capabilityGroups = [
   {
     title: "Topic Specific",
     description:
-      "Programs can also be organized around focused capability themes such as machine learning, design, analytics, cybersecurity, and cloud.",
+      "Machine Learning, Design, Analytics, Cybersecurity, Cloud",
     items: [
       "Machine Learning",
       "Design",
@@ -129,8 +117,7 @@ export const capabilityGroups = [
   },
   {
     title: "Level Specific",
-    description:
-      "Enterprise cohorts can be designed for senior leadership, mid-career professionals, or freshers depending on the target audience.",
+    description: "Senior Leadership, Mid-Career Professionals, Freshers",
     items: [
       "Senior Leadership",
       "Mid-Career Professionals",
@@ -141,73 +128,111 @@ export const capabilityGroups = [
   },
 ];
 
-export const metrics = [
+export const audienceGroups = [
   {
-    label: "Enterprise partners",
-    value: "120+",
-    detail:
-      "Mocked signal for organizations supported across capability-building programs.",
+    title: "Tech Professionals",
+    description: "Enhance expertise, embrace tech, drive innovation.",
   },
   {
-    label: "Learners engaged",
-    value: "35k+",
-    detail:
-      "A scale indicator that helps position credibility on the landing page.",
+    title: "Non-Tech Professionals",
+    description: "Adapt digitally, collaborate in tech environments.",
   },
   {
-    label: "Program satisfaction",
-    value: "94%",
-    detail:
-      "Sample outcome metric styled for quick scanning by decision-makers.",
+    title: "Emerging Professionals",
+    description: "Develop powerful skills for rapid career growth.",
   },
   {
-    label: "Repeat engagements",
-    value: "68%",
-    detail:
-      "A trust marker showing how enterprise relationships can deepen over time.",
+    title: "Senior Professionals",
+    description: "Strengthen leadership, enhance strategic decisions.",
+  },
+];
+
+export const workflowSteps = [
+  {
+    title: "Skill Gap Analysis",
+    description: "Assess team skill gaps and developmental needs.",
+  },
+  {
+    title: "Customized Training Plan",
+    description:
+      "Create a tailored roadmap addressing organizational goals.",
+  },
+  {
+    title: "Flexible Program Delivery",
+    description:
+      "Deliver adaptable programs aligned with industry and organizational needs.",
   },
 ];
 
 export const testimonials = [
   {
-    name: "Ritika Malhotra",
-    role: "L&D Lead, Growth-stage fintech",
+    name: "ADP",
     quote:
-      "The experience felt thoughtful from discovery through reporting. Our leaders never felt like they were dropped into a generic course catalog.",
+      "We would like to thank Accredian for the wonderful support and the beautiful journey. The team turned our vision into reality with unparalleled dedication, service, and expertise throughout the entire process.",
   },
   {
-    name: "Vishal Menon",
-    role: "HRBP, enterprise software company",
+    name: "Bayer",
     quote:
-      "The structure made it easy to explain value internally. Stakeholders could immediately see the link between the learning plan and business priorities.",
+      "Accredian's commitment to excellence is unmatched. They consistently go the extra mile to ensure our needs are met and exceeded, providing reliable support and high-quality service every step of the way.",
   },
   {
-    name: "Ananya Rao",
-    role: "Transformation office, global services firm",
+    name: "Reliance",
     quote:
-      "The strongest part was the delivery discipline. Communications, facilitation, and post-program summaries all felt polished and reliable.",
+      "Choosing Accredian for the learning & development of our employees was a beneficial decision. The value derived from the course is immense & their support team is always there to help our employees.",
   },
 ];
 
-export const faqs = [
+export const faqGroups = [
   {
-    question: "Can this be adapted for specific business units or functions?",
-    answer:
-      "Yes. The page and content structure were intentionally built around reusable data objects, so different business units, capability themes, and program variants can be swapped in without changing the layout system.",
+    title: "About the Course",
+    items: [
+      {
+        question:
+          "What types of corporate training programs does Accredian offer?",
+        answer:
+          "Accredian provides industry-specific, customizable training programs tailored to meet your organization's unique needs, covering domains like leadership, tech, data, and fintech.",
+      },
+      {
+        question: "What domain specializations are available?",
+        answer:
+          "We offer expertise in various domains, including Leadership Development, Tech & Data, Fintech, Digital Business, Product Innovation, Operations Management, and Generative AI.",
+      },
+    ],
   },
   {
-    question: "Is the lead form connected to a real backend?",
-    answer:
-      "It currently posts to a mock Next.js API route that validates the payload and returns a success response. That keeps the implementation assignment-friendly while still demonstrating a real interaction flow.",
+    title: "About the Delivery",
+    items: [
+      {
+        question:
+          "Can the courses be customized for specific industries or teams?",
+        answer:
+          "Absolutely. Our programs are fully customizable, including content, format, timing, and industry-specific focus, to align with your organization's goals.",
+      },
+      {
+        question: "Who are the instructors for these programs?",
+        answer:
+          "Our courses are delivered by industry leaders, experienced mentors, and domain experts with real-world insights.",
+      },
+      {
+        question: "What formats are the programs delivered in?",
+        answer:
+          "Programs can be delivered in various formats, including online, offline, hybrid, and on-demand, based on your team's preferences and requirements.",
+      },
+    ],
   },
   {
-    question: "How close is this to the original reference site?",
-    answer:
-      "It is a partial clone inspired by the section flow, enterprise tone, and conversion structure of the reference. The implementation avoids direct template copying and makes some layout and visual decisions more intentional for the assignment.",
-  },
-  {
-    question: "What would be the next improvement with more time?",
-    answer:
-      "The best next steps would be adding CMS-backed content, real analytics or lead storage, richer motion polish, and tighter visual parity with audited screenshots from the source page.",
+    title: "Miscellaneous",
+    items: [
+      {
+        question: "What is the ideal team size for corporate training?",
+        answer:
+          "Our programs are flexible and can cater to teams of any size, from small groups to large organizational cohorts.",
+      },
+      {
+        question: "How do we get started with Accredian?",
+        answer:
+          "Get started with Accredian by contacting us or requesting a quote on our website. Our team will guide you through the process, from skill gap analysis to a custom program tailored to your needs.",
+      },
+    ],
   },
 ];
