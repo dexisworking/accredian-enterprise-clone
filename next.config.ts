@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         pathname:
           "/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };
