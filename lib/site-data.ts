@@ -91,40 +91,53 @@ export const workflowSteps = [
 
 export const capabilityGroups = [
   {
-    title: "Leadership and management",
+    title: "Program Specific",
     description:
-      "Programs for managers, senior leaders, and high-potential talent moving into broader influence.",
-    items: ["Executive presence", "People leadership", "Strategy", "Change"],
+      "Programs can be tailored by credential depth and structure, ranging from certificates to executive and post graduate certificate formats.",
+    items: ["Certificate", "Executive", "Post Graduate Certificate"],
+    image:
+      "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/project-management-v2.webp",
   },
   {
-    title: "AI and digital fluency",
+    title: "Industry Specific",
     description:
-      "Practical pathways for enterprise teams adopting AI tools and new workflows responsibly.",
-    items: ["AI literacy", "Prompting", "Automation", "Governance"],
+      "Learning paths can be contextualized to industry realities across technology, healthcare, retail, finance, education, and manufacturing.",
+    items: [
+      "IT",
+      "Healthcare",
+      "Retail",
+      "Finance",
+      "Education",
+      "Manufacturing",
+    ],
+    image:
+      "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/digital-transformation-v2.webp",
   },
   {
-    title: "Data and decision-making",
+    title: "Topic Specific",
     description:
-      "Foundational and intermediate capability-building for better analysis, storytelling, and action.",
-    items: ["Analytics", "Dashboards", "Storytelling", "Experimentation"],
+      "Programs can also be organized around focused capability themes such as machine learning, design, analytics, cybersecurity, and cloud.",
+    items: [
+      "Machine Learning",
+      "Design",
+      "Analytics",
+      "Cybersecurity",
+      "Cloud",
+    ],
+    image:
+      "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/data-science-v2.webp",
   },
   {
-    title: "Product and innovation",
+    title: "Level Specific",
     description:
-      "Role-oriented learning for teams building, shipping, and scaling better products.",
-    items: ["Discovery", "Roadmapping", "Agile", "Prioritization"],
-  },
-  {
-    title: "Commercial excellence",
-    description:
-      "Programs that support GTM teams with consultative selling, customer value, and account growth.",
-    items: ["Sales enablement", "Negotiation", "Customer success", "Messaging"],
-  },
-  {
-    title: "Operations and execution",
-    description:
-      "Capability programs for teams expected to improve process quality, speed, and coordination.",
-    items: ["Process design", "Quality", "Execution", "Cross-functional work"],
+      "Enterprise cohorts can be designed for senior leadership, mid-career professionals, or freshers depending on the target audience.",
+    items: [
+      "Senior Leadership",
+      "Mid-Career Professionals",
+      "Freshers",
+    ],
+    image:
+      "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/senior-management-v2.webp",
   },
 ];
 

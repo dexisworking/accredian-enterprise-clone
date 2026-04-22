@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { LeadForm } from "@/components/lead-form";
 import { SiteHeader } from "@/components/site-header";
@@ -123,16 +124,16 @@ export default function Home() {
                   </p>
                   <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-700">
                     <span className="rounded-full bg-slate-100 px-3 py-2">
-                      AI fluency
+                      Certificate
                     </span>
                     <span className="rounded-full bg-slate-100 px-3 py-2">
-                      Strategy
+                      IT
                     </span>
                     <span className="rounded-full bg-slate-100 px-3 py-2">
-                      Data
+                      Machine Learning
                     </span>
                     <span className="rounded-full bg-slate-100 px-3 py-2">
-                      Leadership
+                      Senior Leadership
                     </span>
                   </div>
                 </div>
@@ -262,32 +263,43 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <SectionHeading
               eyebrow="Capability map"
-              title="Reusable program architecture across high-priority business themes."
-              description="The page is structured to help enterprise visitors scan by capability area instead of reading long generic paragraphs."
+              title="Programs tailored across the same four dimensions surfaced on the original site."
+              description="Using the scraped reference data, this section now mirrors the original structure more closely: programs can be shaped by program type, industry, topic, and learner level."
             />
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
               {capabilityGroups.map((group) => (
                 <article
                   key={group.title}
-                  className="rounded-[2rem] border border-[var(--line)] bg-white p-6"
+                  className="overflow-hidden rounded-[2rem] border border-[var(--line)] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
                 >
-                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                    {group.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {group.description}
-                  </p>
-                  <ul className="mt-5 flex flex-wrap gap-3">
-                    {group.items.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-full bg-slate-100 px-3 py-2 text-sm text-slate-700"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="relative h-56 w-full">
+                    <Image
+                      src={group.image}
+                      alt={group.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                      {group.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {group.description}
+                    </p>
+                    <ul className="mt-5 flex flex-wrap gap-3">
+                      {group.items.map((item) => (
+                        <li
+                          key={item}
+                          className="rounded-full bg-slate-100 px-3 py-2 text-sm text-slate-700"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </article>
               ))}
             </div>
