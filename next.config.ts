@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "enterprise.accredian.com",
+      },
+      {
+        protocol: "https",
         hostname: "storage.googleapis.com",
         pathname:
           "/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/**",

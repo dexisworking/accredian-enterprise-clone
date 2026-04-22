@@ -14,9 +14,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Accredian Enterprise Clone",
-  description:
-    "Partial Accredian Enterprise landing page clone built with Next.js App Router and Tailwind CSS.",
+  title: "Accredian Enterprise | Upskilling Your Workforce",
+  description: "Partner with Accredian to deliver customized training programs in Data Science, AI, and Product Management that drive measurable business impact.",
 };
 
 export default function RootLayout({
@@ -27,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceMono.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans">{children}</body>
     </html>

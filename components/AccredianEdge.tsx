@@ -1,77 +1,53 @@
 "use client";
 
-import { Target, Users, Zap, Monitor, Layers, BarChart3, Clock } from "lucide-react";
+import { accredianEdge } from "@/lib/site-data";
+import { Lightbulb, Users, Zap, Monitor, Layers, Target, Clock } from "lucide-react";
 
-const edges = [
-  {
-    title: "Tailored Solutions",
-    description: "Programs customized to your organization's goals and challenges.",
-    icon: Target,
-  },
-  {
-    title: "Expert Guidance",
-    description: "Learn from industry leaders with real-world success.",
-    icon: Users,
-  },
-  {
-    title: "Innovative Framework",
-    description: "Proprietary methods for impactful, application-driven results.",
-    icon: Zap,
-  },
-  {
-    title: "Advanced Technology",
-    description: "State-of-the-art LMS for seamless learning experiences.",
-    icon: Monitor,
-  },
-  {
-    title: "Diverse Offerings",
-    description: "Courses across industries, skill levels, and emerging fields.",
-    icon: Layers,
-  },
-  {
-    title: "Proven Impact",
-    description: "Trusted by leading organizations for measurable ROI.",
-    icon: BarChart3,
-  },
-  {
-    title: "Flexible Delivery",
-    description: "Online and offline options tailored to your needs.",
-    icon: Clock,
-  },
-];
+const icons: Record<string, any> = {
+  lightbulb: Lightbulb,
+  users: Users,
+  zap: Zap,
+  monitor: Monitor,
+  layers: Layers,
+  target: Target,
+  clock: Clock,
+};
 
 export function AccredianEdge() {
   return (
-    <section id="accredian-edge" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-[var(--primary-blue)]/5 rounded-full blur-3xl pointer-events-none" />
-      
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--bg-light)] text-[var(--primary-blue)] text-sm font-bold uppercase tracking-widest mb-6 border border-[var(--line)]">
-            The Accredian Edge
-          </div>
-          <h2 className="text-4xl font-extrabold text-[var(--foreground)] sm:text-5xl leading-tight">
-            Why Choose Us for Your Enterprise Training?
+    <section id="accredian-edge" className="py-24 bg-[#f8fbff] relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-extrabold text-[#0F172A] mb-4">
+            The <span className="text-[#1A73E8]">Accredian Edge</span>
           </h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {edges.map((edge, index) => (
-            <div 
-              key={edge.title} 
-              className={`group p-8 rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2 ${
-                index === 6 ? "sm:col-span-2 lg:col-span-3 xl:col-span-1" : ""
-              }`}
-            >
-              <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[var(--bg-light)] text-[var(--primary-blue)] mb-8 transition-colors duration-500 group-hover:bg-[var(--primary-blue)] group-hover:text-white">
-                <edge.icon size={28} strokeWidth={2.5} />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {accredianEdge.map((edge, i) => {
+            const Icon = icons[edge.icon] || Lightbulb;
+            return (
+              <div 
+                key={edge.title} 
+                className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-[#1A73E8]/5 transition-all duration-500 group transform hover:-translate-y-2"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-[#1A73E8]/5 flex items-center justify-center mb-6 group-hover:bg-[#1A73E8] transition-colors duration-500">
+                  <Icon size={32} className="text-[#1A73E8] group-hover:text-white transition-colors duration-500" />
+                </div>
+                <h3 className="text-2xl font-extrabold text-[#0F172A] mb-4">
+                  {edge.title}
+                </h3>
+                <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                  {edge.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">{edge.title}</h3>
-              <p className="text-[var(--text-gray)] leading-relaxed text-sm">{edge.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
+      
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#1A73E8]/5 to-transparent pointer-events-none" />
     </section>
   );
 }

@@ -1,27 +1,21 @@
 "use client";
 
-const stats = [
-  { label: "Professionals Trained", value: "10K+", desc: "For career success" },
-  { label: "Sessions Delivered", value: "200+", desc: "Unmatched excellence" },
-  { label: "Active Learners", value: "5K+", desc: "Engaged in courses" },
-  { label: "Domain Experts", value: "50+", desc: "Industry veterans" },
-];
+import { stats } from "@/lib/site-data";
 
 export function Stats() {
   return (
-    <section id="stats" className="bg-white py-24 border-b border-gray-100">
+    <section id="stats" className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="group text-center">
-              <p className="text-4xl font-extrabold text-[var(--primary-blue)] transition-transform duration-500 group-hover:scale-110">
-                {stat.value}
-              </p>
-              <h3 className="mt-4 text-lg font-bold text-[var(--foreground)]">
+        <div className="grid gap-12 md:grid-cols-3 md:divide-x divide-slate-100">
+          {stats.map((stat, i) => (
+            <div key={i} className="text-center px-8">
+              <div className="relative inline-block mb-4">
+                <p className="text-6xl font-extrabold text-[#1A73E8] tracking-tight">
+                  {stat.value}
+                </p>
+              </div>
+              <p className="text-lg font-medium text-slate-600 leading-snug max-w-[280px] mx-auto">
                 {stat.label}
-              </h3>
-              <p className="mt-1 text-sm text-[var(--text-gray)]">
-                {stat.desc}
               </p>
             </div>
           ))}

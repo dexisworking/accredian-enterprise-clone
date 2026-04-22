@@ -1,53 +1,57 @@
 "use client";
 
-import { LeadForm } from "./lead-form";
+import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
+import { heroChecklist } from "@/lib/site-data";
 
-export function Hero() {
+export function Hero({ onEnquire }: { onEnquire?: () => void }) {
   return (
-    <section id="hero" className="relative overflow-hidden bg-[var(--bg-light)] pt-16 pb-24 lg:pt-32 lg:pb-40">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(26,115,232,0.08)_0%,transparent_70%)] pointer-events-none" />
-      
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-          <div className="lg:col-span-6">
-            <div className="inline-flex items-center rounded-full bg-[var(--line)] px-3 py-1 text-sm font-semibold text-[var(--primary-blue)] mb-8">
-              Accredian Enterprise
-            </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl leading-[1.1]">
-              <span className="block">Empower Your Team with</span>
-              <span className="block text-[var(--primary-blue)] mt-2">Strategic Skill Enhancement</span>
-            </h1>
-            <p className="mt-8 text-lg text-[var(--text-gray)] sm:text-xl leading-relaxed max-w-xl">
-              Partner with Accredian to deliver customized training programs in Data Science, AI, and Product Management that drive measurable business impact.
-            </p>
-            
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-              {[
-                { title: "Customized", desc: "Curriculum tailored to your needs" },
-                { title: "Expert-led", desc: "Training by industry veterans" },
-                { title: "Project-based", desc: "Real-world hands-on experience" },
-                { title: "ROI Driven", desc: "Measurable performance growth" },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm border border-[var(--line)]">
-                    <svg className="h-6 w-6 text-[var(--primary-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[var(--foreground)]">{item.title}</h3>
-                    <p className="text-sm text-[var(--text-gray)]">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+    <section className="relative pt-24 pb-12 overflow-hidden bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative bg-[#f8fbff] rounded-[3rem] overflow-hidden border border-[var(--line)] shadow-sm">
+          {/* Background Gradient Accents */}
+          <div className="absolute top-0 right-0 w-[600px] h-full bg-gradient-to-l from-[#1A73E8]/5 to-transparent pointer-events-none" />
           
-          <div className="mt-16 lg:col-span-6 lg:mt-0">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[var(--brand-blue)]/10 to-transparent blur-2xl pointer-events-none" />
-              <LeadForm />
+          <div className="grid lg:grid-cols-2 items-center px-8 sm:px-12 py-16 lg:py-20 relative z-10">
+            <div className="max-w-2xl">
+              <h1 className="text-5xl sm:text-7xl font-extrabold text-[#0F172A] leading-[1.1] tracking-tight">
+                Next-Gen <span className="text-[#1A73E8]">Expertise</span><br />
+                For Your <span className="text-[#1A73E8]">Enterprise</span>
+              </h1>
+              
+              <p className="mt-8 text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium">
+                Cultivate high-performance teams through expert learning.
+              </p>
+              
+              <div className="mt-10 space-y-4">
+                {heroChecklist.map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 size={24} className="text-green-500 shrink-0" />
+                    <span className="text-lg font-semibold text-[#0F172A]">{item}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-12">
+                <button 
+                  onClick={onEnquire}
+                  className="bg-[#1A73E8] hover:bg-[#1557b0] text-white px-10 py-4 rounded-xl text-xl font-bold shadow-lg shadow-[#1A73E8]/20 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+            
+            <div className="relative mt-16 lg:mt-0 lg:h-[600px] flex items-end justify-center">
+              <div className="relative w-full h-full max-w-2xl lg:max-w-none">
+                <Image 
+                  src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/corporate-big-hero-v4.webp" 
+                  alt="Accredian Enterprise Team" 
+                  fill
+                  className="object-contain object-bottom drop-shadow-2xl"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

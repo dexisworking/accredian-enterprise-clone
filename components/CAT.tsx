@@ -1,68 +1,62 @@
 "use client";
 
-import Image from "next/image";
-import { capabilityGroups } from "@/lib/site-data";
+import { catFramework } from "@/lib/site-data";
+import { BookOpen, Terminal, Wrench } from "lucide-react";
+
+const icons = [BookOpen, Terminal, Wrench];
 
 export function CAT() {
   return (
-    <section id="cat" className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--bg-light)] text-[var(--primary-blue)] text-sm font-bold uppercase tracking-widest mb-6 border border-[var(--line)]">
-            CAT Framework
-          </div>
-          <h2 className="text-4xl font-extrabold text-[var(--foreground)] sm:text-5xl leading-tight">
-            Customized Academic Training
-          </h2>
-          <p className="mt-6 text-lg text-[var(--text-gray)] leading-relaxed">
-            We provide multi-dimensional training paths designed to meet the unique needs of your workforce.
+    <section id="cat" className="py-24 bg-white relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <p className="text-xl text-slate-600">
+            Our Proven Approach to <span className="text-[#1A73E8]">Learning Excellence</span>
           </p>
         </div>
-        
-        <div className="relative">
-          {/* Connecting Line (Desktop) */}
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-[var(--line)] -translate-y-1/2 hidden xl:block z-0" />
-          
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4 relative z-10">
-            {capabilityGroups.map((group, index) => (
-              <div 
-                key={group.title} 
-                className="group flex flex-col items-center text-center bg-white p-2 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden mb-8 shadow-lg">
-                  <Image 
-                    src={group.image} 
-                    alt={group.title} 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-blue)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Step Number Circle */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white flex items-center justify-center font-bold text-[var(--primary-blue)] shadow-md">
-                    0{index + 1}
+
+        <div className="relative max-w-5xl mx-auto">
+          {/* Wave/Loop SVG Background */}
+          <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 hidden lg:block">
+            <svg viewBox="0 0 1000 200" fill="none" className="w-full">
+              <path 
+                d="M50,100 C150,0 350,200 500,100 C650,0 850,200 950,100" 
+                stroke="#1A73E8" 
+                strokeWidth="4" 
+                strokeDasharray="12 12" 
+                className="opacity-20"
+              />
+              <circle cx="50" cy="100" r="6" fill="#1A73E8" />
+              <circle cx="500" cy="100" r="6" fill="#1A73E8" />
+              <circle cx="950" cy="100" r="6" fill="#1A73E8" />
+            </svg>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-16 relative">
+            {catFramework.map((item, i) => {
+              const Icon = icons[i] || BookOpen;
+              return (
+                <div key={item.title} className="flex flex-col items-center text-center group">
+                  <div className="relative mb-8">
+                    {/* Outer circle with gradient border effect */}
+                    <div className="w-48 h-48 rounded-full border-4 border-[#1A73E8] flex items-center justify-center bg-white shadow-xl group-hover:scale-105 transition-transform duration-500 relative z-20">
+                      <div className="p-8">
+                         <Icon size={64} className="text-[#1A73E8]" />
+                      </div>
+                    </div>
+                    {/* Glowing background */}
+                    <div className="absolute inset-0 bg-[#1A73E8]/10 rounded-full blur-2xl scale-90 group-hover:scale-110 transition-transform duration-500 -z-10" />
                   </div>
+                  
+                  <h3 className="text-3xl font-extrabold text-[#0F172A] mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-lg text-slate-600 leading-relaxed max-w-[240px]">
+                    {item.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-bold text-[var(--foreground)] mb-3">{group.title}</h3>
-                <p className="text-sm text-[var(--text-gray)] leading-relaxed px-4 mb-6">
-                  {group.description}
-                </p>
-                
-                <div className="flex flex-wrap justify-center gap-2 px-2 mt-auto">
-                  {group.items.slice(0, 3).map((item) => (
-                    <span key={item} className="text-[10px] font-bold uppercase tracking-wider bg-[var(--bg-light)] text-[var(--primary-blue)] px-2 py-1 rounded-md">
-                      {item}
-                    </span>
-                  ))}
-                  {group.items.length > 3 && (
-                    <span className="text-[10px] font-bold text-[var(--text-gray)] px-1">
-                      +{group.items.length - 3} more
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

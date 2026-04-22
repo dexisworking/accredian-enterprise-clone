@@ -1,36 +1,37 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-type FaqGroup = {
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQGroup {
   title: string;
-  items: {
-    question: string;
-    answer: string;
-  }[];
-};
+  items: FAQItem[];
+}
 
-export function FaqAccordion({ groups }: { groups: FaqGroup[] }) {
-  const [activeGroup, setActiveGroup] = useState(groups[0]?.title ?? "");
-  const currentGroup =
-    groups.find((group) => group.title === activeGroup) ?? groups[0];
-  const [openItem, setOpenItem] = useState(currentGroup?.items[0]?.question ?? "");
+export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
+  const [activeGroupIndex, setActiveGroupIndex] = useState(0);
+  const [openItemIndex, setOpenItemIndex] = useState<number | null>(0);
 
   return (
-    <div>
-      <div className="mb-6 flex flex-wrap gap-3">
-        {groups.map((group) => (
+    <div className="flex flex-col lg:flex-row gap-12">
+      {/* Sidebar Tabs */}
+      <div className="lg:w-1/3 flex flex-col gap-4">
+        {groups.map((group, idx) => (
           <button
             key={group.title}
-            type="button"
             onClick={() => {
-              setActiveGroup(group.title);
-              setOpenItem(group.items[0]?.question ?? "");
+              setActiveGroupIndex(idx);
+              setOpenItemIndex(0);
             }}
-            className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
-              activeGroup === group.title
-                ? "border-[var(--brand-blue)] bg-[var(--brand-blue)] text-white"
-                : "border-[var(--line)] bg-white text-slate-600"
+            className={`px-8 py-5 rounded-2xl text-left text-xl font-bold transition-all ${
+              activeGroupIndex === idx
+                ? "bg-white shadow-xl shadow-slate-200/50 text-[#1A73E8] border border-slate-100"
+                : "bg-slate-50 text-slate-500 hover:bg-slate-100"
             }`}
           >
             {group.title}
@@ -38,46 +39,40 @@ export function FaqAccordion({ groups }: { groups: FaqGroup[] }) {
         ))}
       </div>
 
-      <div className="space-y-4">
-        {currentGroup.items.map((item) => {
-        const isOpen = item.question === openItem;
-
-        return (
-          <article
-            key={item.question}
-            className="overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
+      {/* Accordion Content */}
+      <div className="lg:w-2/3 space-y-4">
+        {groups[activeGroupIndex].items.map((item, idx) => (
+          <div 
+            key={idx} 
+            className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
             <button
-              type="button"
-              onClick={() =>
-                setOpenItem((current) =>
-                  current === item.question ? "" : item.question,
-                )
-              }
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+              onClick={() => setOpenItemIndex(openItemIndex === idx ? null : idx)}
+              className="w-full px-8 py-6 flex items-center justify-between text-left group"
             >
-              <span className="text-lg font-semibold tracking-tight text-slate-950">
+              <span className={`text-xl font-bold transition-colors ${
+                openItemIndex === idx ? "text-[#1A73E8]" : "text-[#0F172A]"
+              }`}>
                 {item.question}
               </span>
-              <span
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--line)] text-xl text-slate-600 transition ${isOpen ? "rotate-45 text-[var(--brand-blue)]" : ""}`}
-              >
-                +
-              </span>
+              {openItemIndex === idx ? (
+                <ChevronUp className="text-[#1A73E8]" size={24} />
+              ) : (
+                <ChevronDown className="text-slate-400 group-hover:text-slate-600" size={24} />
+              )}
             </button>
-
-            <div
-              className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+            
+            <div 
+              className={`transition-all duration-300 ease-in-out ${
+                openItemIndex === idx ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              }`}
             >
-              <div className="overflow-hidden">
-                <p className="px-6 pb-6 text-sm leading-7 text-slate-600">
-                  {item.answer}
-                </p>
+              <div className="px-8 pb-8 text-lg text-slate-600 leading-relaxed">
+                {item.answer}
               </div>
             </div>
-          </article>
-        );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
