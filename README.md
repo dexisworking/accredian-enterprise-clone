@@ -4,7 +4,7 @@ Partial clone of the [Accredian Enterprise](https://enterprise.accredian.com/) l
 
 ## Submission Links
 
-- Live deployed link: https://accredian-enterprise-clone-five.vercel.app
+- Live deployed link: https://accredianclonedex.vercel.app/
 - GitHub repository: https://github.com/dexisworking/accredian-enterprise-clone
 
 ## What I Built
