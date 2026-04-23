@@ -1,119 +1,74 @@
-# Accredian Enterprise Partial Clone
+# Accredian Enterprise Landing Page Clone
 
-Partial clone of the [Accredian Enterprise](https://enterprise.accredian.com/) landing page built with Next.js App Router and Tailwind CSS.
+A high-fidelity, production-ready replica of the Accredian Enterprise landing page built with **Next.js**, **React**, and **Tailwind CSS**. This project demonstrates a focus on modular architecture, responsive design, and interactive user experiences.
 
-## Submission Links
+## 🚀 Live Demo
+[Insert Vercel Deployment Link Here]
 
-- Live deployed link: https://accredianclonedex.vercel.app/
-- GitHub repository: https://github.com/dexisworking/accredian-enterprise-clone
+## 🛠️ Setup Instructions
 
-## What I Built
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-- Responsive enterprise landing page
-- Sticky navigation with mobile menu
-- Reusable section-driven layout
-- Lead capture form
-- Mock API integration using a Next.js API route
-- FAQ accordion and smooth in-page navigation
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/accredian-enterprise-clone.git
+   cd accredian-enterprise-clone
+   ```
 
-## Tech Stack
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- Next.js 16 App Router
-- React functional components with hooks
-- Tailwind CSS v4
-- TypeScript
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## Project Structure
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-```text
-app/
-  api/leads/route.ts
-  globals.css
-  layout.tsx
-  page.tsx
-components/
-  faq-accordion.tsx
-  lead-form.tsx
-  site-header.tsx
-lib/
-  site-data.ts
-```
+---
 
-## Setup Instructions
+## 🏗️ Approach Taken
 
-1. Install dependencies:
+- **Modular Component Architecture**: Built reusable React components (Hero, Stats, Testimonials, FAQ, etc.) to ensure a clean, maintainable, and scalable codebase.
+- **Tailwind CSS for High-Fidelity Styling**: Leveraged Tailwind's utility-first approach to achieve pixel-perfect parity with the original design, including complex layouts like the horizontal marquee and responsive grid systems.
+- **Next.js App Router**: Utilized the latest Next.js features for efficient routing and built-in API support for lead capture.
+- **Custom Interaction System**: Implemented a sitewide custom cursor system and high-fidelity micro-interactions (hover states, modal transitions) to enhance user engagement.
+- **Responsive-First Design**: Ensured strict viewport compliance, with specific UI logic for mobile users (e.g., list-view stats, mobile-optimized marquee).
 
-```bash
-npm install
-```
+---
 
-2. Start the development server:
+## 🤖 AI Usage Explanation
 
-```bash
-npm run dev
-```
+This project was developed using **Antigravity** (and other AI tools) as an advanced coding partner. The collaboration focused on translating high-level architectural requirements and specific design prompts into optimized code.
 
-3. Open [http://localhost:3000](http://localhost:3000)
+### Where AI Helped
+- **Rapid Prototyping**: AI was used to quickly generate initial component structures and Tailwind layouts based on precise structural prompts.
+- **Complex Logic Implementation**: AI assisted in wiring up the Next.js API routes and handling state transitions for the multi-step Enquiry Form.
+- **CSS Precision**: Assisted in refining complex CSS behaviors, such as the infinite marquee and custom scrollbar configurations.
 
-4. Create a production build:
+### Manual Modifications & Improvements
+While AI helped with the heavy lifting of implementation, the core of the project was driven by **manual oversight and iterative refinement**:
+- **Design System Definition**: I manually defined the color palettes, typography hierarchy, and spacing tokens to ensure brand consistency.
+- **Responsive Auditing**: Manually fine-tuned every breakpoint to ensure that complex layouts (like the 'Accredian Edge' USP section) felt native on all devices.
+- **Asset Integration**: Curated and integrated all branding assets, including the custom SVG social icons and hero imagery.
+- **Logic Refinement**: Manually refactored the form submission logic to move from simple timeouts to a functional Next.js API integrated with lead capture.
 
-```bash
-npm run build
-```
+---
 
-## Approach Taken
+## 🔮 Future Improvements
 
-The page was rebuilt from scratch in a blank workspace using a reusable section pattern instead of a template-first approach. I used the reference site mainly for information architecture and tone, then reinterpreted the layout with:
-
-- a full-bleed hero with stronger visual hierarchy
-- reusable data-driven sections for programs, metrics, testimonials, and FAQs
-- a clean responsive header/footer system
-- a mock lead form backed by `app/api/leads/route.ts`
-
-The implementation favors maintainability: most content is centralized in `lib/site-data.ts`, while interaction-heavy pieces live in focused client components.
-
-## AI Usage Explanation
-
-### Where AI helped
-
-- Planning the page structure from the assignment brief and reference site
-- Speeding up the initial section architecture and content framing
-- Drafting reusable component structure and Tailwind-first layout patterns
-- Generating and refining placeholder enterprise copy for sections, FAQs, and testimonials
-- Helping shape the README and submission notes
-
-### What I modified or improved manually
-
-- Reworked the visual direction to avoid a generic SaaS template feel
-- Adjusted spacing, hierarchy, and responsive behavior section by section
-- Built the hero composition, orbit visuals, and motion details manually
-- Added a mock API-backed lead capture flow instead of leaving the page static
-- Cleaned the code structure into reusable components and centralized content data
-
-## Functional Notes
-
-- The lead form sends a `POST` request to `/api/leads`
-- The API route validates required fields and returns a mock success response
-- The page is fully navigable through anchored sections
-- The layout is optimized for mobile and desktop
-
-## Verification
-
-Production build completed successfully with:
-
-```bash
-npm run build
-```
-
-## Improvements With More Time
-
-- Match the original site more closely using a full visual audit of spacing, imagery, and typography
-- Add real CMS or database-backed content instead of static data
-- Persist leads to a backend or CRM
-- Add richer micro-interactions and scroll-linked motion
-- Add automated tests for form behavior and section rendering
-- Add visual regression checks for future iterations
-
-## Notes
-
-This is a partial clone intended for evaluation of execution, structure, responsiveness, and engineering choices rather than a pixel-perfect copy.
+With more time, the following enhancements would be prioritized:
+- **Database Persistence**: Integrate MongoDB or Prisma to store captured leads permanently rather than just logging them.
+- **Content Management System (CMS)**: Integrate Sanity or Contentful to allow marketing teams to update FAQ content and testimonials without code changes.
+- **Form Validation**: Implement Zod for more robust server-side and client-side validation of form data.
+- **Internationalization (i18n)**: Add multi-language support to cater to a global enterprise audience.
+- **Performance Optimization**: Implement specialized image loading strategies and edge caching for even faster load times.
