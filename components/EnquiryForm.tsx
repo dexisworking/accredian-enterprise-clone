@@ -55,7 +55,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
       <div className="lg:w-[40%] bg-[#f8fbff] p-10 flex flex-col justify-between border-r border-slate-100">
         <div>
           <img 
-            src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/main/accredian-logo.webp" 
+            src="/logo.webp" 
             alt="Accredian" 
             className="h-10 mb-12"
           />

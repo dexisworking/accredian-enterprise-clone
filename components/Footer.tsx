@@ -11,7 +11,7 @@ export function Footer({ onEnquire }: { onEnquire?: () => void }) {
           <div className="max-w-md">
             <div className="flex items-center gap-2 mb-8">
               <img 
-                src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/main/accredian-logo.webp" 
+                src="/logo.webp" 
                 alt="Accredian" 
                 className="h-10"
               />

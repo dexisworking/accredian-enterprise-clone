@@ -21,9 +21,10 @@ export function SiteHeader({ onEnquire }: { onEnquire?: () => void }) {
       <div className="mx-auto flex max-w-7xl h-full items-center justify-between px-4 lg:px-8">
         <a href="#top" className="flex items-center">
           <img 
-            src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/main/accredian-logo.webp" 
+            src="/logo.webp" 
             alt="Accredian" 
             className="h-[35px] w-auto"
+            data-cur="pointer"
           />
         </a>
 
