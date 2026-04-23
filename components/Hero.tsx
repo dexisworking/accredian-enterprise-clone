@@ -38,7 +38,7 @@ export function Hero({ onEnquire }: { onEnquire?: () => void }) {
                 className="w-[80%] sm:w-[170px] p-[7px] text-md font-normal text-white bg-[#1A73E8] rounded-lg shadow-md" 
                 data-cur="pointer"
               >
-                <p className="text-sm md:text-xl" data-cur="pointer">Enquire Now</p> 
+                <p className="text-sm md:text-xl relative -top-[2px]" data-cur="pointer">Enquire Now</p> 
               </button>
             </div>
           </div>
