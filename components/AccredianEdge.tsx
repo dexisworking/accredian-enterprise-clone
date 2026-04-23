@@ -24,6 +24,16 @@ export function AccredianEdge() {
           Key Aspects of <span className="text-[#1A73E8]" data-cur="cursor">Our Strategic Training</span>
         </p>
       </div>
+
+      {/* Mobile View USP Image */}
+      <div className="flex sm:hidden w-full justify-center items-center mb-8">
+        <img 
+          src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/accredian-edge-usp-mobile.svg" 
+          alt="Our Solutions" 
+          className="w-[100%] h-auto rounded-lg" 
+          data-cur="cursor"
+        />
+      </div>
       
       {/* Desktop/Tablet View */}
       <div className="w-full hidden sm:flex justify-center items-center mb-8">
@@ -188,14 +198,6 @@ export function AccredianEdge() {
         </div>
       </div>
 
-      {/* Mobile View SVG */}
-      <div className="flex sm:hidden w-full justify-center items-center mb-8">
-        <img 
-          src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/accredian-edge-usp-mobile.svg" 
-          alt="Our Solutions" 
-          className="w-[100%] h-auto rounded-lg" 
-        />
-      </div>
     </div>
   );
 }
