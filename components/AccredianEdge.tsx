@@ -131,26 +131,56 @@ export function AccredianEdge() {
             Explore <span className="text-[#1A73E8]" data-cur="cursor">Custom-fit Courses</span> Designed to Address Every Professional Focus
           </p>
         </div>
-        <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6" data-cur="cursor">
+
+        {/* Desktop View: Grid */}
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6 px-6" data-cur="cursor">
           <div className="bg-white rounded-lg shadow-lg border border-gray-300">
             <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/project-management-v2.webp" alt="Program Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
             <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Program Specific</h4>
-            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6">Certificate, Executive, Post Graduate Certificate</p>
+            <p className="text-gray-600 mt-2 text-sm px-6 pb-6" data-cur="cursor">Certificate, Executive, Post Graduate Certificate</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg border border-gray-300" data-cur="cursor">
             <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/digital-transformation-v2.webp" alt="Industry Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
             <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Industry Specific</h4>
-            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6" data-cur="cursor">IT, Healthcare, Retail, Finance, Education, Manufacturing</p>
+            <p className="text-gray-600 mt-2 text-sm px-6 pb-6" data-cur="cursor">IT, Healthcare, Retail, Finance, Education, Manufacturing</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg border border-gray-300" data-cur="cursor">
             <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/data-science-v2.webp" alt="Topic Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
             <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Topic Specific</h4>
-            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6" data-cur="cursor">Machine Learning, Design, Analytics, Cybersecurity, Cloud</p>
+            <p className="text-gray-600 mt-2 text-sm px-6 pb-6" data-cur="cursor">Machine Learning, Design, Analytics, Cybersecurity, Cloud</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg border border-gray-300">
             <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/senior-management-v2.webp" alt="Level Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
             <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Level Specific</h4>
-            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6" data-cur="cursor">Senior Leadership, Mid-Career Professionals, Freshers</p>
+            <p className="text-gray-600 mt-2 text-sm px-6 pb-6" data-cur="cursor">Senior Leadership, Mid-Career Professionals, Freshers</p>
+          </div>
+        </div>
+
+        {/* Mobile View: Horizontal Scroll Carousel */}
+        <div className="sm:hidden flex overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 gap-6" data-cur="cursor">
+          <div className="snap-center shrink-0 w-[85%]">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/project-management-v2.webp" alt="Program Specific" className="w-full h-40 object-cover rounded-t-lg" />
+              <h4 className="text-2xl font-semibold text-[#1A73E8] p-6 text-left">Program Specific</h4>
+            </div>
+          </div>
+          <div className="snap-center shrink-0 w-[85%]">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/digital-transformation-v2.webp" alt="Industry Specific" className="w-full h-40 object-cover rounded-t-lg" />
+              <h4 className="text-2xl font-semibold text-[#1A73E8] p-6 text-left">Industry Specific</h4>
+            </div>
+          </div>
+          <div className="snap-center shrink-0 w-[85%]">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/data-science-v2.webp" alt="Topic Specific" className="w-full h-40 object-cover rounded-t-lg" />
+              <h4 className="text-2xl font-semibold text-[#1A73E8] p-6 text-left">Topic Specific</h4>
+            </div>
+          </div>
+          <div className="snap-center shrink-0 w-[85%]">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/senior-management-v2.webp" alt="Level Specific" className="w-full h-40 object-cover rounded-t-lg" />
+              <h4 className="text-2xl font-semibold text-[#1A73E8] p-6 text-left">Level Specific</h4>
+            </div>
           </div>
         </div>
       </section>
