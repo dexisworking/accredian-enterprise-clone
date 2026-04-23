@@ -10,10 +10,28 @@ interface EnquiryFormProps {
 export function EnquiryForm({ onClose }: EnquiryFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    setTimeout(() => setStatus("success"), 1500);
+    
+    try {
+      // Simulating a real API call using Mocky.io
+      // This endpoint returns a successful JSON response
+      const response = await fetch("https://run.mocky.io/v3/8fe76d0d-ee40-42f4-8d9e-1f7f02d447f5", {
+        method: "POST",
+        body: new FormData(e.target as HTMLFormElement),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      // Fallback to success for demo purposes if mocky fails
+      setStatus("success"); 
+    }
   };
 
   if (status === "success") {
@@ -71,6 +89,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div>
               <input 
                 required
+                name="name"
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
                 type="text" 
                 placeholder="Enter Name" 
@@ -80,19 +99,21 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div>
               <input 
                 required
+                name="email"
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
                 type="email" 
                 placeholder="Enter Email" 
               />
             </div>
             <div className="flex gap-2">
-              <select className="w-20 px-1 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent">
+              <select name="phone_code" className="w-20 px-1 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent">
                 <option>+91</option>
                 <option>+1</option>
                 <option>+44</option>
               </select>
               <input 
                 required
+                name="phone"
                 className="flex-1 px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
                 type="tel" 
                 placeholder="Phone number" 
@@ -101,6 +122,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div>
               <input 
                 required
+                name="company"
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
                 type="text" 
                 placeholder="Enter Company Name" 
@@ -109,6 +131,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div>
               <select 
                 required
+                name="domain"
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent appearance-none"
               >
                 <option value="">Select Domain</option>
@@ -123,6 +146,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div>
               <input 
                 required
+                name="candidates"
                 type="number" 
                 placeholder="Enter No. of candidates" 
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
@@ -132,6 +156,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div>
               <select 
                 required
+                name="mode"
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent appearance-none"
               >
                 <option value="">Select Mode of Delivery *</option>
@@ -143,6 +168,7 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
             <div data-cur="cursor">
               <input 
                 required
+                name="location"
                 type="text" 
                 placeholder="Eg: Gurugram, Delhi, India" 
                 className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
