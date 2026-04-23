@@ -6,7 +6,7 @@ A high-fidelity, production-ready replica of the Accredian Enterprise landing pa
 
 [Live Demo](https://accredianclonedex.vercel.app/)
 
-## 🏗️ Approach Taken
+## Approach Taken
 
 - **Modular Component Architecture**: Built reusable React components (Hero, Stats, Testimonials, FAQ, etc.) to ensure a clean, maintainable, and scalable codebase.
 - **Tailwind CSS for High-Fidelity Styling**: Leveraged Tailwind's utility-first approach to achieve pixel-perfect parity with the original design, including complex layouts like the horizontal marquee and responsive grid systems.
@@ -14,30 +14,12 @@ A high-fidelity, production-ready replica of the Accredian Enterprise landing pa
 - **Custom Interaction System**: Implemented a sitewide custom cursor system and high-fidelity micro-interactions (hover states, modal transitions) to enhance user engagement.
 - **Responsive-First Design**: Ensured strict viewport compliance, with specific UI logic for mobile users (e.g., list-view stats, mobile-optimized marquee).
 
----
 
-## 🤖 AI Usage Explanation
+## AI-Assisted Implementation
 
-This project was developed using **Antigravity** (and other AI tools) as an advanced coding partner. The collaboration focused on translating high-level architectural requirements and specific design prompts into optimized code.
+The development of this project leveraged AI tools (including Antigravity) to execute the architectural vision and technical requirements. Complex UI patterns and backend logic were implemented through precise structural prompting and iterative design reviews. This collaborative approach ensured high-fidelity parity with the original landing page while allowing for manual fine-tuning of the design system, responsive breakpoints, and custom interaction logic.
 
-### Where AI Helped
-
-- **Rapid Prototyping**: AI was used to quickly generate initial component structures and Tailwind layouts based on precise structural prompts.
-- **Complex Logic Implementation**: AI assisted in wiring up the Next.js API routes and handling state transitions for the multi-step Enquiry Form.
-- **CSS Precision**: Assisted in refining complex CSS behaviors, such as the infinite marquee and custom scrollbar configurations.
-
-### Manual Modifications & Improvements
-
-While AI helped with the heavy lifting of implementation, the core of the project was driven by **manual oversight and iterative refinement**:
-
-- **Design System Definition**: I manually defined the color palettes, typography hierarchy, and spacing tokens to ensure brand consistency.
-- **Responsive Auditing**: Manually fine-tuned every breakpoint to ensure that complex layouts (like the 'Accredian Edge' USP section) felt native on all devices.
-- **Asset Integration**: Curated and integrated all branding assets, including the custom SVG social icons and hero imagery.
-- **Logic Refinement**: Manually refactored the form submission logic to move from simple timeouts to a functional Next.js API integrated with lead capture.
-
----
-
-## 🔮 Future Improvements
+## Future Improvements
 
 With more time, the following enhancements would be prioritized:
 
