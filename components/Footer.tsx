@@ -1,65 +1,81 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
-
 export function Footer({ onEnquire }: { onEnquire?: () => void }) {
   return (
-    <footer className="bg-slate-50 pt-24 pb-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
-          <div className="max-w-md">
-            <div className="flex items-center gap-2 mb-8">
-              <img 
-                src="/logo.webp" 
-                alt="Accredian" 
-                className="h-10"
-              />
-            </div>
-            <div className="flex gap-6 text-slate-700">
-               {/* Custom Social SVGs */}
-               <SocialIcon icon="linkedin" />
-               <SocialIcon icon="twitter" />
-               <SocialIcon icon="facebook" />
-               <SocialIcon icon="instagram" />
-               <SocialIcon icon="youtube" />
+    <footer className="mt-12 bg-[#1d1d1d] sm:bg-white sm:mt-24 py-10" data-cur="cursor">
+      <div className="max-w-[85rem] w-full px-[22px] sm:px-0 mx-auto" data-cur="cursor">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-700 pb-6" data-cur="cursor">
+          <div>
+            <img 
+              className="hidden sm:block" 
+              src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/logo.webp" 
+              alt="Accredian" 
+              style={{ width: "9rem" }} 
+            />
+            <img 
+              className="block sm:hidden" 
+              src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/logo/accredainnew.webp" 
+              alt="Accredian Mobile" 
+              style={{ width: "9rem" }} 
+            />
+            <div className="flex gap-4 mt-4">
+              <a href="https://facebook.com/accredianlearn" className="sm:text-gray-700 text-white hover:text-[#1A73E8]">
+                <svg className="w-5 h-5" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="FacebookIcon">
+                  <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"></path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/accredianedu/" className="sm:text-gray-700 text-white hover:text-[#1A73E8]">
+                <svg className="w-5 h-5" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LinkedInIcon">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                </svg>
+              </a>
+              <a href="https://twitter.com/accredianedu" className="sm:text-gray-700 text-white hover:text-[#1A73E8]">
+                <svg className="w-5 h-5" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TwitterIcon">
+                  <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/accredian_edu" className="sm:text-gray-700 text-white hover:text-[#1A73E8]">
+                <svg className="w-5 h-5" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="InstagramIcon">
+                  <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5 5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/channel/UCE0L_4ADPU2iyKnDJ0xRzyA" className="sm:text-gray-700 text-white hover:text-[#1A73E8]">
+                <svg className="w-5 h-5" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="YouTubeIcon">
+                  <path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"></path>
+                </svg>
+              </a>
             </div>
           </div>
-          
-          <div className="flex flex-col items-end">
+          <div className="mt-6 justify-center md:mt-0">
             <button 
               onClick={onEnquire}
-              className="bg-[#1A73E8] hover:bg-[#1557b0] text-white px-10 py-4 rounded-xl text-xl font-bold shadow-lg shadow-[#1A73E8]/20 transition-all mb-4"
+              className="p-2 sm:px-6 sm:py-2 bg-[#1A73E8] text-sm sm:text-lg text-white font-normal rounded-lg" 
+              data-cur="pointer"
             >
               Enquire Now
             </button>
-            <p className="text-slate-600 font-medium">Speak with our Advisor</p>
+            <p className="text-white sm:text-gray-700 text-sm mt-2">Speak with our Advisor</p>
           </div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-16 py-16 border-y border-slate-200">
-          <div>
-            <h4 className="text-2xl font-extrabold text-[#0F172A] mb-8">Accredian</h4>
-            <ul className="space-y-4 text-xl text-slate-600 font-medium">
-              <li className="hover:text-[#1A73E8] cursor-pointer transition-colors">About</li>
-              <li className="hover:text-[#1A73E8] cursor-pointer transition-colors">Blog</li>
-              <li className="hover:text-[#1A73E8] cursor-pointer transition-colors">Why Accredian</li>
+        <div className="grid grid-cols-1 md:grid-cols-2 pb-6 gap-8 mt-6 border-b border-gray-700" data-cur="cursor">
+          <div data-cur="cursor">
+            <h3 className="font-normal sm:font-semibold text-lg text-white sm:text-black" data-cur="cursor">Accredian</h3>
+            <ul className="mt-2 text-white sm:text-gray-700 space-y-2" data-cur="cursor">
+              <li data-cur="cursor"><a href="https://accredian.com/About" className="hover:text-[#1A73E8]">About</a></li>
+              <li data-cur="cursor"><a href="https://blog.accredian.com/" className="hover:text-[#1A73E8]">Blog</a></li>
+              <li data-cur="cursor"><a href="https://accredian.com/whyaccredian" className="hover:text-[#1A73E8]">Why Accredian</a></li>
             </ul>
           </div>
-          
           <div>
-            <h4 className="text-2xl font-extrabold text-[#0F172A] mb-8">Contact Us</h4>
-            <div className="space-y-6 text-xl text-slate-600 font-medium">
-              <p>Email us: <span className="text-[#1A73E8]">enterprise@accredian.com</span></p>
-              <p className="leading-relaxed">
-                Office Address: 4th Floor, 250, Phase IV, Udyog Vihar, Sector 18, Gurugram, Haryana
-              </p>
-            </div>
+            <h3 className="font-normal sm:font-semibold text-lg text-white sm:text-black">Contact Us</h3>
+            <p className="text-gray-200 sm:text-gray-700 mt-2">
+              Email us: <a href="mailto:enterprise@accredian.com" className="text-[#1A73E8]">enterprise@accredian.com</a>
+            </p>
+            <p className="text-white sm:text-gray-700 mt-2 max-w-lg">
+              Office Address: 4th Floor, 250, Phase IV, Udyog Vihar, Sector 18, Gurugram, Haryana
+            </p>
           </div>
         </div>
-
-        <div className="text-center pt-12">
-          <p className="text-lg text-slate-500 font-medium">
+        <div className="flex justify-center items-center pt-3 text-center" data-cur="cursor">
+          <p className="text-white sm:text-gray-700" data-cur="cursor">
             © 2026 Accredian A Brand of FullStack Education Pvt Ltd. All Rights Reserved
           </p>
         </div>
@@ -68,33 +84,3 @@ export function Footer({ onEnquire }: { onEnquire?: () => void }) {
   );
 }
 
-function SocialIcon({ icon }: { icon: string }) {
-  const icons: Record<string, React.ReactNode> = {
-    linkedin: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 hover:text-[#1A73E8] cursor-pointer transition-colors">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-      </svg>
-    ),
-    twitter: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 hover:text-[#1A73E8] cursor-pointer transition-colors">
-        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-      </svg>
-    ),
-    facebook: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 hover:text-[#1A73E8] cursor-pointer transition-colors">
-        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-      </svg>
-    ),
-    instagram: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 hover:text-[#1A73E8] cursor-pointer transition-colors">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
-    ),
-    youtube: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 hover:text-[#1A73E8] cursor-pointer transition-colors">
-        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.612 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/>
-      </svg>
-    ),
-  };
-  return icons[icon] || null;
-}
