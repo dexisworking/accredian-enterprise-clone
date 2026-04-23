@@ -3,38 +3,8 @@
 A high-fidelity, production-ready replica of the Accredian Enterprise landing page built with **Next.js**, **React**, and **Tailwind CSS**. This project demonstrates a focus on modular architecture, responsive design, and interactive user experiences.
 
 ## 🚀 Live Demo
-[Insert Vercel Deployment Link Here]
 
-## 🛠️ Setup Instructions
-
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/accredian-enterprise-clone.git
-   cd accredian-enterprise-clone
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-
----
+[\[Insert Vercel Deployment Link Here\]](https://accredianclonedex.vercel.app/)
 
 ## 🏗️ Approach Taken
 
@@ -51,12 +21,15 @@ A high-fidelity, production-ready replica of the Accredian Enterprise landing pa
 This project was developed using **Antigravity** (and other AI tools) as an advanced coding partner. The collaboration focused on translating high-level architectural requirements and specific design prompts into optimized code.
 
 ### Where AI Helped
+
 - **Rapid Prototyping**: AI was used to quickly generate initial component structures and Tailwind layouts based on precise structural prompts.
 - **Complex Logic Implementation**: AI assisted in wiring up the Next.js API routes and handling state transitions for the multi-step Enquiry Form.
 - **CSS Precision**: Assisted in refining complex CSS behaviors, such as the infinite marquee and custom scrollbar configurations.
 
 ### Manual Modifications & Improvements
+
 While AI helped with the heavy lifting of implementation, the core of the project was driven by **manual oversight and iterative refinement**:
+
 - **Design System Definition**: I manually defined the color palettes, typography hierarchy, and spacing tokens to ensure brand consistency.
 - **Responsive Auditing**: Manually fine-tuned every breakpoint to ensure that complex layouts (like the 'Accredian Edge' USP section) felt native on all devices.
 - **Asset Integration**: Curated and integrated all branding assets, including the custom SVG social icons and hero imagery.
@@ -67,6 +40,7 @@ While AI helped with the heavy lifting of implementation, the core of the projec
 ## 🔮 Future Improvements
 
 With more time, the following enhancements would be prioritized:
+
 - **Database Persistence**: Integrate MongoDB or Prisma to store captured leads permanently rather than just logging them.
 - **Content Management System (CMS)**: Integrate Sanity or Contentful to allow marketing teams to update FAQ content and testimonials without code changes.
 - **Form Validation**: Implement Zod for more robust server-side and client-side validation of form data.
