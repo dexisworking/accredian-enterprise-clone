@@ -17,10 +17,8 @@ export function Stats() {
         <div className="grid gap-0 md:grid-cols-3">
           {stats.map((stat, i) => (
             <div key={i} className={`flex flex-col items-center text-center px-12 py-8 ${i < stats.length - 1 ? 'md:border-r border-slate-200' : ''}`} data-cur="cursor">
-              <div className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#E8F0FE] mb-6">
-                <p className="text-5xl font-extrabold text-[#1A73E8] tracking-tight" data-cur="cursor">
-                  {stat.value}
-                </p>
+              <div className="text-2xl text-[#1A73E8] font-semibold w-24 h-[60px] bg-blue-100 p-2 rounded-full flex items-center justify-center mb-6" data-cur="cursor">
+                <h2 data-cur="cursor">{stat.value}</h2>
               </div>
               <p className="text-[18px] font-medium text-[#3C4043] leading-snug max-w-[280px] mx-auto" data-cur="cursor">
                 {stat.label}
