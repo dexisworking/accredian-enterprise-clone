@@ -36,7 +36,7 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
               }`}
               data-cur="cursor"
             >
-              <h1 className={`text-sm whitespace-nowrap lg:text-lg font-semibold ${
+              <h1 className={`text-sm lg:text-lg font-semibold whitespace-nowrap max-md:text-nowrap ${
                 activeGroupIndex === idx ? "text-[#1A73E8]" : "text-neutral-500"
               }`} data-cur="cursor">
                 {group.title}
@@ -57,7 +57,10 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
         {groups[activeGroupIndex].items.map((item, idx) => (
           <div 
             key={idx} 
-            className="bg-white rounded-md shadow-[0px_2px_1px_-1px_rgba(0,0,0,0.2),0px_1px_1px_0px_rgba(0,0,0,0.14),0px_1px_3px_0px_rgba(0,0,0,0.12)] overflow-hidden"
+            className="bg-white rounded-md overflow-hidden transition-all duration-300"
+            style={{
+              boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)"
+            }}
           >
             <h3 className="m-0">
               <button 
@@ -73,14 +76,14 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
                   </h1>
                 </div>
                 <span className={`transition-transform duration-300 ${openItemIndex === idx ? 'rotate-180' : ''}`}>
-                  <svg className="w-6 h-6 text-gray-500" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                  <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-gray-500 w-6 h-6" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
                   </svg>
                 </span>
               </button>
             </h3>
             <div 
-              className={`transition-all duration-300 ease-in-out ${
+              className={`transition-all duration-300 ease-in-out overflow-hidden ${
                 openItemIndex === idx ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
@@ -94,6 +97,6 @@ export function FaqAccordion({ groups }: { groups: FAQGroup[] }) {
         ))}
       </div>
     </div>
-  );
+);
 }
 
