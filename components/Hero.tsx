@@ -11,7 +11,7 @@ export function Hero({ onEnquire }: { onEnquire?: () => void }) {
             <h1 className="text-center sm:text-left cursor-context-menu text-2xl sm:text-4xl lg:text-6xl xxl:text-7xl 2xl:text-[5.2vw] 3xl:text-[5.0rem] font-bold max-w-full sm:max-w-[350px] lg:max-w-[700px] pt-2 capitalize px-8 sm:px-0 font-circular" data-cur="cursor">
               Next-Gen <span className="text-[#1A73E8]" data-cur="cursor">Expertise</span> for Your<span className="text-[#1A73E8]" data-cur="cursor"> Enterprise</span>
             </h1>
-            <p className="font-medium md:font-normal text-sm sm:text-lg lg:text-2xl text-[#3C4043] max-w-full p-2 sm:p-0 w-full sm:max-w-[350px] text-center sm:text-start" data-cur="cursor">
+            <p className="font-medium md:font-normal text-sm sm:text-lg lg:text-2xl text-[#3C4043] max-w-full p-2 sm:p-0 w-full sm:max-w-[350px] text-center sm:text-start font-circular" data-cur="cursor">
               Cultivate high-performance teams through expert learning.
             </p>
             <ul className="grid grid-cols-2 mx-auto sm:flex sm:mx-0 sm:justify-start sm:flex-wrap gap-4" data-cur="cursor">
