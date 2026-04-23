@@ -111,7 +111,41 @@ export function AccredianEdge() {
         </div>
       </div>
       
-      {/* Mobile View */}
+      {/* Tailored Course Segmentation Section */}
+      <section className="mt-12 sm:mt-28 md:mx-16 mb-10 bg-white text-center font-circular" data-cur="cursor">
+        <div className="text-center mb-10 mx-2" data-cur="cursor">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight" data-cur="cursor">
+            Tailored <span className="text-[#1A73E8]" data-cur="cursor">Course Segmentation</span>
+          </h2>
+          <p className="text-sm sm:text-lg text-gray-700 mt-3 m-auto mx-1" data-cur="cursor">
+            Explore <span className="text-[#1A73E8]" data-cur="cursor">Custom-fit Courses</span> Designed to Address Every Professional Focus
+          </p>
+        </div>
+        <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6" data-cur="cursor">
+          <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+            <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/project-management-v2.webp" alt="Program Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
+            <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Program Specific</h4>
+            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6">Certificate, Executive, Post Graduate Certificate</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg border border-gray-300" data-cur="cursor">
+            <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/digital-transformation-v2.webp" alt="Industry Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
+            <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Industry Specific</h4>
+            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6" data-cur="cursor">IT, Healthcare, Retail, Finance, Education, Manufacturing</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg border border-gray-300" data-cur="cursor">
+            <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/data-science-v2.webp" alt="Topic Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
+            <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Topic Specific</h4>
+            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6" data-cur="cursor">Machine Learning, Design, Analytics, Cybersecurity, Cloud</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+            <img src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/senior-management-v2.webp" alt="Level Specific" className="w-full h-40 object-cover rounded-t-lg mb-4" data-cur="cursor" />
+            <h4 className="text-2xl font-semibold text-[#1A73E8] px-6" data-cur="cursor">Level Specific</h4>
+            <p className="text-gray-600 hidden sm:block mt-2 text-sm px-6 pb-6" data-cur="cursor">Senior Leadership, Mid-Career Professionals, Freshers</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile View SVG */}
       <div className="flex sm:hidden w-full justify-center items-center mb-8">
         <img 
           src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/accredian-edge-usp-mobile.svg" 
