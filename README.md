@@ -4,7 +4,7 @@ A high-fidelity, production-ready replica of the Accredian Enterprise landing pa
 
 ## 🚀 Live Demo
 
-[\[Insert Vercel Deployment Link Here\]](https://accredianclonedex.vercel.app/)
+[Live Demo](https://accredianclonedex.vercel.app/)
 
 ## 🏗️ Approach Taken
 
