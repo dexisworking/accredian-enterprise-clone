@@ -6,7 +6,7 @@ import { heroChecklist } from "@/lib/site-data";
 
 export function Hero({ onEnquire }: { onEnquire?: () => void }) {
   return (
-    <section className="relative pt-24 pb-12 overflow-hidden bg-white">
+    <section id="home" className="relative pt-24 pb-12 overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative bg-[#f8fbff] rounded-[3rem] overflow-hidden border border-[var(--line)] shadow-sm">
           {/* Background Gradient Accents */}

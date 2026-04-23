@@ -7,7 +7,7 @@ const stepIcons = [BarChart, Monitor, Video];
 
 export function Process() {
   return (
-    <section id="how-it-works" className="py-24 bg-white relative">
+    <section id="howItWorks" className="py-24 bg-white relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold text-[#0F172A] mb-4">

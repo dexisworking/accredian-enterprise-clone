@@ -15,7 +15,7 @@ const icons: Record<string, any> = {
 
 export function AccredianEdge() {
   return (
-    <section id="accredian-edge" className="py-24 bg-[#f8fbff] relative overflow-hidden">
+    <section id="accredianEdge" className="py-24 bg-[#f8fbff] relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold text-[#0F172A] mb-4">
