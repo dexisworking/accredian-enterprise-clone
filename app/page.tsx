@@ -10,6 +10,7 @@ import { CAT } from "@/components/CAT";
 import { Process } from "@/components/Process";
 import { Testimonials } from "@/components/Testimonials";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { LeadCapture } from "@/components/LeadCapture";
 import { Footer } from "@/components/Footer";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { faqGroups } from "@/lib/site-data";
@@ -53,6 +54,7 @@ export default function Home() {
         </section>
 
         <Testimonials onEnquire={() => setIsModalOpen(true)} />
+        <LeadCapture />
       </main>
 
       <Footer onEnquire={() => setIsModalOpen(true)} />

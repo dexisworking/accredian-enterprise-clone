@@ -15,11 +15,14 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
     setStatus("loading");
     
     try {
-      // Simulating a real API call using Mocky.io
-      // This endpoint returns a successful JSON response
-      const response = await fetch("https://run.mocky.io/v3/8fe76d0d-ee40-42f4-8d9e-1f7f02d447f5", {
+      // Simulating a real API call using our local Next.js API route
+      const formData = new FormData(e.target as HTMLFormElement);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch("/api/enquiry", {
         method: "POST",
-        body: new FormData(e.target as HTMLFormElement),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
