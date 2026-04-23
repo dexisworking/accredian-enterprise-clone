@@ -20,7 +20,7 @@ export function Stats() {
               <div className="text-2xl text-[#1A73E8] font-semibold w-24 h-[60px] bg-blue-100 p-2 rounded-full flex items-center justify-center mb-6" data-cur="cursor">
                 <h2 data-cur="cursor">{stat.value}</h2>
               </div>
-              <p className="text-[18px] font-medium text-[#3C4043] leading-snug max-w-[280px] mx-auto" data-cur="cursor">
+              <p className="max-w-[300px]" data-cur="cursor">
                 {stat.label}
               </p>
             </div>

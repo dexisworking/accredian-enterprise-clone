@@ -9,15 +9,15 @@ export const clientLogos = [
 
 export const stats = [
   {
-    label: "Professionals Trained For Exceptional Career Success",
+    label: "Professionals trained for exceptional career success",
     value: "10K+",
   },
   {
-    label: "Sessions Delivered With Unmatched Learning Excellence",
+    label: "Sessions delivered with unmatched learning excellence",
     value: "200+",
   },
   {
-    label: "Active Learners Engaged In Dynamic Courses",
+    label: "Active learners engaged in dynamic courses",
     value: "5K+",
   },
 ];
