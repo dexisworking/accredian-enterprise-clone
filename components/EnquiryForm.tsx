@@ -41,100 +41,126 @@ export function EnquiryForm({ onClose }: EnquiryFormProps) {
   }
 
   return (
-    <div className="relative bg-white rounded-lg overflow-hidden flex flex-col lg:flex-row min-h-[600px]">
-      {onClose && (
-        <button 
-          onClick={onClose}
-          className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-600 transition-colors z-50 lg:text-slate-400"
-        >
-          <X size={24} />
-        </button>
-      )}
-
-      {/* Left Side: Branding/Info (40%) */}
-      <div className="lg:w-[40%] bg-[#f8fbff] p-10 flex flex-col justify-between border-r border-slate-100">
-        <div>
-          <img 
-            src="/logo.webp" 
-            alt="Accredian" 
-            className="h-10 mb-12"
-          />
-          <h2 className="text-[32px] font-extrabold text-[#000000] mb-6 leading-[1.2]">
-            Elevate Your <br />
-            <span className="text-[#1A73E8]">Team's Potential</span>
-          </h2>
-          <p className="text-lg text-[#3C4043] font-medium leading-relaxed">
-            Fill out the form and our learning advisors will get back to you with a tailored solution.
-          </p>
-        </div>
-        
-        <div className="space-y-4">
-          <div className="flex items-center gap-3 text-[#1A73E8]">
-            <div className="w-10 h-10 rounded-lg bg-[#E8F0FE] flex items-center justify-center font-bold">1</div>
-            <p className="font-bold text-lg">Consultation</p>
-          </div>
-          <div className="flex items-center gap-3 text-[#5F6368]">
-            <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center font-bold">2</div>
-            <p className="font-bold text-lg">Strategy</p>
-          </div>
-          <div className="flex items-center gap-3 text-[#5F6368]">
-            <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center font-bold">3</div>
-            <p className="font-bold text-lg">Execution</p>
-          </div>
-        </div>
+    <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl flex flex-col sm:flex-row overflow-hidden">
+      {/* Left Image Section */}
+      <div className="hidden sm:flex w-1/2 bg-blue-100 items-center justify-center">
+        <img 
+          src="https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/business-v2.webp" 
+          alt="Quote Request" 
+          className="w-full h-full object-cover" 
+          data-cur="cursor"
+        />
       </div>
 
-      {/* Right Side: Form (60%) */}
-      <div className="lg:w-[60%] p-10">
-        <h3 className="text-2xl font-extrabold text-[#000000] mb-8">Enquire Now</h3>
-        
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid gap-5 sm:grid-cols-2">
-            <input required type="text" placeholder="Enter Name" className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium" />
-            <input required type="email" placeholder="Enter Email" className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium" />
-            
+      {/* Right Form Section */}
+      <div id="scrollbar2" className="font-circular w-full md:w-1/2 p-8 max-h-[90vh] overflow-y-auto no-scrollbar" data-cur="cursor">
+        <div className="flex justify-between items-center pb-4 border-b border-neutral-100 mb-6">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Enquire Now</h2>
+          {onClose && (
+            <button 
+              onClick={onClose}
+              className="text-gray-400 hover:text-gray-800 transition-colors"
+            >
+              <X size={24} />
+            </button>
+          )}
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="text-black space-y-4">
+            <div>
+              <input 
+                required
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
+                type="text" 
+                placeholder="Enter Name" 
+                data-cur="cursor" 
+              />
+            </div>
+            <div>
+              <input 
+                required
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
+                type="email" 
+                placeholder="Enter Email" 
+              />
+            </div>
             <div className="flex gap-2">
-              <select className="w-24 px-2 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-bold">
+              <select className="w-20 px-1 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent">
                 <option>+91</option>
                 <option>+1</option>
                 <option>+44</option>
               </select>
-              <input required type="tel" placeholder="Phone number" className="flex-1 px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium" />
+              <input 
+                required
+                className="flex-1 px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
+                type="tel" 
+                placeholder="Phone number" 
+              />
             </div>
-            
-            <input required type="text" placeholder="Company Name" className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium" />
-            
-            <select required className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium appearance-none">
-              <option value="">Select Domain</option>
-              <option>Data Science & AI</option>
-              <option>Product Management</option>
-              <option>Cyber Security</option>
-              <option>Cloud Computing</option>
-              <option>Leadership</option>
-              <option>Fintech</option>
-            </select>
-            
-            <input required type="number" placeholder="No. of candidates" className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium" />
-            
-            <select required className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium appearance-none">
-              <option value="">Select Mode of Delivery</option>
-              <option>Online</option>
-              <option>Offline</option>
-              <option>Hybrid</option>
-            </select>
-            
-            <input required type="text" placeholder="Location" className="w-full px-5 py-3 rounded-lg border border-slate-200 bg-white focus:border-[#1A73E8] outline-none transition-all text-[15px] font-medium" />
+            <div>
+              <input 
+                required
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
+                type="text" 
+                placeholder="Enter Company Name" 
+              />
+            </div>
+            <div>
+              <select 
+                required
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent appearance-none"
+              >
+                <option value="">Select Domain</option>
+                <option>Data Science & AI</option>
+                <option>Product Management</option>
+                <option>Cyber Security</option>
+                <option>Cloud Computing</option>
+                <option>Leadership</option>
+                <option>Fintech</option>
+              </select>
+            </div>
+            <div>
+              <input 
+                required
+                type="number" 
+                placeholder="Enter No. of candidates" 
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
+                data-cur="cursor" 
+              />
+            </div>
+            <div>
+              <select 
+                required
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent appearance-none"
+              >
+                <option value="">Select Mode of Delivery *</option>
+                <option>Online</option>
+                <option>Offline</option>
+                <option>Hybrid</option>
+              </select>
+            </div>
+            <div data-cur="cursor">
+              <input 
+                required
+                type="text" 
+                placeholder="Eg: Gurugram, Delhi, India" 
+                className="w-full px-2 py-3 font-normal text-sm border-b-2 border-neutral-200 focus:border-[#1A73E8] outline-none transition bg-transparent" 
+              />
+            </div>
+            <div className="pt-4">
+              <button 
+                type="submit" 
+                disabled={status === "loading"}
+                className="w-full py-3 bg-[#1A73E8] hover:bg-[#1557b0] text-white rounded-lg font-semibold transition-all shadow-md active:scale-[0.98] disabled:opacity-50"
+              >
+                {status === "loading" ? "Processing..." : "Submit"}
+              </button>
+            </div>
           </div>
-          
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="w-full mt-4 bg-[#1A73E8] hover:bg-[#1557b0] text-white font-bold h-12 rounded-lg shadow-lg shadow-[#1A73E8]/20 transition-all transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-          >
-            {status === "loading" ? "Processing..." : "Submit"}
-          </button>
         </form>
       </div>
     </div>
   );
 }
+
