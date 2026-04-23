@@ -76,7 +76,7 @@ export function Footer({ onEnquire }: { onEnquire?: () => void }) {
         </div>
         <div className="flex justify-center items-center pt-3 text-center" data-cur="cursor">
           <p className="text-white sm:text-gray-700" data-cur="cursor">
-            © 2026 Accredian A Brand of FullStack Education Pvt Ltd. All Rights Reserved
+            © 2026 Dibyanshu Sekhar A Full Stack Developer making this Clone for Accredian. No Rights Reserved
           </p>
         </div>
       </div>
