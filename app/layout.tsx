@@ -14,7 +14,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Accredian Enterprise | Upskilling Your Workforce",
+  title: "Accredian",
   description: "Partner with Accredian to deliver customized training programs in Data Science, AI, and Product Management that drive measurable business impact.",
 };
 
