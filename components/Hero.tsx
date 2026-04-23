@@ -8,8 +8,8 @@ export function Hero({ onEnquire }: { onEnquire?: () => void }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-lg md:rounded-3xl bg-blue-50 flex flex-col-reverse sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-4 md:gap-8 lg:gap-12 shadow-xl overflow-visible" data-cur="cursor">
           <div className="sm:w-1/2 w-full sm:ml-7 flex flex-col justify-between gap-4 sm:gap-4 md:gap-8 lg:gap-10 md:ps-2 lg:ps-8" data-cur="cursor">
-            <h1 className="text-center sm:text-left cursor-context-menu text-2xl sm:text-4xl lg:text-6xl 2xl:text-[5.2vw] font-bold max-w-full sm:max-w-[350px] lg:max-w-[700px] pt-2 px-8 sm:px-0" data-cur="cursor">
-              Next-Gen <span className="text-[#1A73E8]" data-cur="cursor">Expertise</span> for Your <span className="text-[#1A73E8]" data-cur="cursor">Enterprise</span>
+            <h1 className="text-center sm:text-left cursor-context-menu text-2xl sm:text-4xl lg:text-6xl xxl:text-7xl 2xl:text-[5.2vw] 3xl:text-[5.0rem] font-bold max-w-full sm:max-w-[350px] lg:max-w-[700px] pt-2 capitalize px-8 sm:px-0 font-circular" data-cur="cursor">
+              Next-Gen <span className="text-[#1A73E8]" data-cur="cursor">Expertise</span> for Your<span className="text-[#1A73E8]" data-cur="cursor"> Enterprise</span>
             </h1>
             <p className="font-medium md:font-normal text-sm sm:text-lg lg:text-2xl text-[#3C4043] max-w-full p-2 sm:p-0 w-full sm:max-w-[350px] text-center sm:text-start" data-cur="cursor">
               Cultivate high-performance teams through expert learning.
