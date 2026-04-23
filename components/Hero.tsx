@@ -15,12 +15,12 @@ export function Hero({ onEnquire }: { onEnquire?: () => void }) {
               Cultivate high-performance teams through expert learning.
             </p>
             <ul className="grid grid-cols-2 mx-auto sm:flex sm:mx-0 sm:justify-start sm:flex-wrap gap-4" data-cur="cursor">
-              <li className="flex items-center gap-2 mb-2">
+              <li className="flex items-center gap-2 mb-2" data-cur="cursor">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-check w-6 h-6 text-green-600"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Tailored Solutions
               </li>
-              <li className="flex items-center gap-2 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-check w-6 h-6 text-green-600"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <li className="flex items-center gap-2 mb-2" data-cur="cursor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-check w-6 h-6 text-green-600" data-cur="cursor"><circle cx="12" cy="12" r="10" data-cur="cursor"></circle><path d="m9 12 2 2 4-4"></path></svg>
                 Industry Insights
               </li>
               <li className="flex items-center gap-2 mb-2" data-cur="cursor">
