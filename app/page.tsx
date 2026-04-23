@@ -30,19 +30,21 @@ export default function Home() {
         <Process />
         
         {/* FAQs */}
-        <section id="faqs" className="py-20 bg-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-extrabold text-[#000000]">
-                Frequently Asked <span className="text-[#1A73E8]">Questions</span>
+        <section id="faqs" className="w-full flex justify-center mt-16 sm:mt-16 md:py-12 xl:px-12 px-4" data-cur="cursor">
+          <div className="w-full max-w-[85rem]" data-cur="cursor">
+            <div className="w-full">
+              <h2 className="text-2xl mx-1 md:text-4xl font-bold text-gray-900 leading-tight" data-cur="cursor">
+                Frequently Asked <span className="text-[#1A73E8]" data-cur="cursor">Questions</span>
               </h2>
             </div>
+            
             <FaqAccordion groups={faqGroups} />
             
-            <div className="mt-16 text-center">
+            <div className="flex justify-center mt-6" data-cur="cursor">
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#1A73E8] hover:bg-[#1557b0] text-white w-[170px] h-[48px] rounded-lg text-lg font-bold shadow-lg shadow-[#1A73E8]/20 transition-all"
+                className="px-6 py-3 bg-[#1A73E8] text-white font-semibold rounded-lg shadow-md hover:bg-[#1557b0] transition duration-300" 
+                data-cur="pointer"
               >
                 Enquire Now
               </button>
